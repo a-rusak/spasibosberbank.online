@@ -1,0 +1,57 @@
+body.is-debug {
+  &::after {
+    content: "";
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
+    padding: @size-em-xxs;
+    font-size: @size-em-xs;
+    font-weight: @font-weight-bold;
+  }
+
+  @media @Phone-S {
+    //background-color: fade(coral, 10%);
+    &::after {
+      content: "Phone-S";
+    }
+  }
+  @media @Phone-L {
+    //background-color: fade(green, 10%);
+    &::after {
+      content: "Phone-L";
+    }
+  }
+  @media @Tablet {
+    //background-color: fade(blue, 10%);
+    &::after {
+      content: "Tablet";
+    }
+  }
+  @media @Laptop {
+    //background-color: fade(orange, 10%);
+    &::after {
+      content: "Laptop";
+    }
+  }
+  @media @Laptop-L {
+    //background-color: fade(cyan, 10%);
+    &::after {
+      content: "Laptop-L";
+    }
+  }
+  @media @4K {
+    //background-color: fade(purple, 10%);
+    &::after {
+      content: "4K";
+    }
+  }
+
+  .l-grid__element > * {
+    // outline: 1px solid fade(green, 20%);
+  }
+  .l-container > * {
+    // outline: 1px solid fade(blue, 20%);
+  }
+}

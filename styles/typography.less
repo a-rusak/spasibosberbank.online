@@ -1,0 +1,122 @@
+body {
+
+  // moved to adaptation.css due to conflict with old styles
+  // color: @font-default-color;
+  // background-color: @page-bg-color;
+
+  font-display: swap;
+  // font-family: @font-family-sans;
+  // font-weight: @font-weight-light;
+  // font-size: @size;
+  // line-height: 1.4;
+
+  /* @media @Phone-S {
+    font-size: @size-s;
+  }
+  @media @Phone-L {
+    font-size: @size-s;
+  }
+  @media @Tablet {
+    font-size: @size-s;
+  }
+  @media @Laptop {
+    font-size: @size;
+  }
+  @media @Laptop-L {
+    font-size: @size-l;
+  }
+  @media @4K {
+    font-size: @size-xl;
+  } */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: @size-em-xl;
+  margin-bottom: @size-em-xxs;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: @size-em * 2;
+  font-weight: @font-weight-light;
+
+  /* @media @Tablet {
+    font-size: @size-em * 1.75;
+  }
+  @media @Phone-L, @Phone-S {
+    font-size: @size-em * 1.5;
+  } */
+}
+h2 {
+  font-size: @size-em-xxl;
+  font-weight: @font-weight-light;
+
+  /* @media @Phone-L, @Phone-S {
+    font-size: @size-em-xl;
+  } */
+}
+h3 {
+  font-size: @size-em-l;
+  font-weight: @font-weight-regular;
+}
+h4 {
+  font-size: @size-em;
+  font-weight: @font-weight-semibold;
+}
+h5 {
+  font-size: @size-em-s;
+  font-weight: @font-weight-bold;
+}
+h6 {
+  font-size: @size-em-xs;
+  font-weight: @font-weight-bold;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+blockquote {
+  margin-top: @size-em-l;
+  margin-bottom: @size-em-l;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: @font-family-sans;
+}
+
+hr {
+  margin-top:    @size-em;
+  margin-bottom: @size-em;
+  border: 0;
+  border-top: 1px solid @black-10;
+}

@@ -1,0 +1,38 @@
+.c-service-nav {
+  font-size: @size-em-s;
+
+  @media @4K, @Laptop-L, @Laptop {
+    margin-left: auto;
+  }
+  @media @Tablet, @Phone-L, @Phone-S {
+    width: 100%;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      display: block;
+    }
+  }
+  &__item {
+    margin: 0;
+    padding: 0;
+
+}
+  &__link {
+    color: @white;
+    display: flex;
+    align-items: center;
+    //padding: @size-em-xxxs @size-xxs;
+    padding: 3px @size-xxs 0 0;
+    min-height: @size-xl * 2;
+
+    img {
+      position: relative;
+      right: -3px; // pixel perfect
+    }
+  }
+}

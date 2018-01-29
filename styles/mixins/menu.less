@@ -1,0 +1,72 @@
+// drop down menu mixin
+.nav-root-link-mixin(@c-name: xyz; @accent: @brand-accent) {
+  position: relative;
+  cursor: pointer;
+  transition: opacity .3s;
+
+  /* &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: @size-em / 3;
+    background-color: @accent;
+    opacity: 0;
+    transition: opacity .3s;
+  } */
+
+  @media @4K, @Laptop-L, @Laptop {
+    .c-@{c-name}__root-item:hover & {
+      text-decoration: none;
+      opacity: 1;
+      background-color: @brand-primary;
+      color: @white;
+
+      /* &:after {
+        opacity: 1;
+      } */
+    }
+  }
+}
+
+.nav-menu-mixin(@c-name: xyz) {
+  position: absolute;
+  margin: 0;
+  padding: @size-l;
+  background-color: @white;
+  list-style: none;
+  opacity: 0;
+  transform+_: scaleY(0);
+  transform-origin: top center;
+  transition+: transform .15s, opacity .3s;
+  z-index: 10;
+  .shadow(3);
+
+  @media @Tablet, @Phone-L, @Phone-S {
+    position: static;
+    display: none;
+    transition: none;
+    transform: none;
+    box-shadow: none;
+    margin-bottom: @size-em * 2;
+    margin-top: -@size-em;
+    padding-top: @size-em / 4;
+    padding-bottom: @size-em / 4;;
+    background-color: transparent;
+    opacity: 1;
+    font-size: @size-em-l;
+  }
+
+  @media @4K, @Laptop-L, @Laptop {
+    .c-@{c-name}__root-item:hover > &,
+    .c-@{c-name}__root-item:focus > & {
+      opacity: 1;
+      transform+_: scaleY(1);
+    }
+  }
+
+  .dropmenu-toggle__checkbox:checked ~ & {
+    display: block;
+  }
+}

@@ -1,0 +1,56 @@
+.c-mobile-search {
+  &__panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: @white;
+    z-index: 10;
+    display: none;
+    padding-left: @size-xl;
+    padding-right: @size-xl;
+
+    .c-mobile-search__checkbox:checked ~ & {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-header {}
+    &-body {
+      flex-grow: 1;
+      overflow: auto;
+    }
+  }
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__section {
+    &-title {
+      font-size: @size-em-xs;
+      color: @brand-gray-regular;
+      margin-top: @size-em * 2;
+    }
+    &-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: @size-em-s;
+
+      > li {
+        margin: @size-em 0;
+      }
+
+      a {
+        color: @font-default-color;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    &-location {
+      color: @brand-gray-regular;
+    }
+  }
+}

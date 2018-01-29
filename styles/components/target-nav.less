@@ -1,0 +1,93 @@
+.c-target-nav {
+  font-size: @size-em-s;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      flex-wrap: wrap;
+      padding-left: @size-xxs;
+    }
+  }
+  &__item {
+    margin: 0;
+    padding: 0;
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      width: 100%;
+    }
+
+    &&--mobile {
+      @media @4K, @Laptop-L, @Laptop {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    // padding: @size-em-xxxs @size-xxs;
+    padding: @size-xxs @size @size-xxxs @size * 2;
+    min-height: @size-xl * 2;
+    background: transparent none no-repeat 7px 10px;
+
+    @media @4K, @Laptop-L, @Laptop {
+      opacity: .6;
+      color: @white;
+      white-space: nowrap;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+
+    .c-target-nav__item--selected > & {
+      opacity: 1;
+    }
+
+    > img:first-child {
+      @media @Tablet, @Phone-L, @Phone-S {
+        display: none;
+      }
+    }
+    > img:last-child {
+      @media @4K, @Laptop-L, @Laptop {
+        display: none;
+      }
+    }
+
+
+    &&--programm {
+      .mix-icon(program);
+    }
+    &&--travel {
+      .mix-icon(travel);
+    }
+    &&--impressions {
+      .mix-icon(impressions);
+    }
+    &&--market {
+      .mix-icon(market);
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    padding: @size-em-xxxs @size-xxs;
+    min-height: @size-xl * 2;
+    color: @brand-gray-regular;
+  }
+
+  .mix-icon (@name) {
+    @media @4K, @Laptop-L, @Laptop {
+      background-image: data-uri('../images/icons/@{name}.png')
+    }
+    @media @Tablet, @Phone-L, @Phone-S {
+      background-image: data-uri('../images/icons/@{name}--dark.png')
+    }
+}
+}

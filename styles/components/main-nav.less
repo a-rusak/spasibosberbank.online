@@ -1,0 +1,108 @@
+.c-main-nav {
+  ul {
+    list-style: none;
+  }
+
+  .l-header & {
+    &::before {
+      @media @4K, @Laptop-L, @Laptop {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background-color: @black-10;
+        width: 100vw;
+        margin-left: -50vw;
+        left: 50%;
+      }
+    }
+  }
+
+  &__root {
+    &-list {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      @media @Tablet, @Phone-L, @Phone-S {
+        flex-wrap: wrap;
+      }
+    }
+    &-item {
+      display: flex;
+      flex-grow: 1;
+
+      @media @Tablet, @Phone-L, @Phone-S {
+        width: 100%;
+      }
+    }
+    &-link {
+      display: flex;
+      flex-grow: 1;
+      padding: @size-xl 0;
+      color: @black;
+      .nav-root-link-mixin(main-nav);
+
+      @media @4K, @Laptop-L, @Laptop {
+        justify-content: center;
+      }
+      @media @Tablet, @Phone-L, @Phone-S {
+        padding: @size @size @size @size-xl;
+        font-size: @size-s;
+      }
+
+      &:hover {
+        background-color: @brand-primary;
+        color: @white;
+        text-decoration: none;
+      }
+      .c-main-nav__root-item--selected & {
+        background-color: @brand-primary;
+        color: @white;
+      }
+    }
+  }
+
+  &__menu {
+    // min-width: @size-em * 20;
+    // width: 100%;
+    top: 100%;
+    // column-width: 15em;
+    column-count: 2;
+    column-gap: @size * 2;
+    column-rule: 1px solid @black-05;
+    font-size: @size-s;
+    .nav-menu-mixin(main-nav);
+
+    .c-main-nav__root-item:nth-child(1n+6)
+      & {
+      right: 0;
+    }
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      display: none;
+      transition: none;
+      transform: none;
+    }
+
+    &-item {
+      padding: @size-em-xs 0;
+    }
+    &-link {
+      display: inline-block;
+      max-width: 14em;
+      color: @font-default-color;
+      // margin: @size-em-xs 0;
+      // display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        text-decoration: none;
+        color: @brand-primary;
+      }
+    }
+  }
+}

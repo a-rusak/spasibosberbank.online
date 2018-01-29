@@ -1,0 +1,16 @@
+.c-image {
+  &&--impressions {
+    .img-responsive();
+
+    @media @4K, @Laptop-L, @Laptop, @Tablet {
+      margin: -@size-xl 0 -@size * 2 -@size-xxxs;
+    }
+  }
+  &&--app {
+    .img-responsive();
+
+    @media @Phone-L, @Phone-S {
+      display: none;
+    }
+  }
+}

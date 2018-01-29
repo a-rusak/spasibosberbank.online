@@ -1,0 +1,43 @@
+.c-help-nav {
+  font-size: @size-em-s;
+
+  @media @Tablet, @Phone-L, @Phone-S {
+    margin: 0;
+    padding: 0;
+    font-size: @size-em-xs;
+  }
+
+  &__list {
+    list-style: none;
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    @media @Laptop {
+      padding-left: @size / 4;
+      padding-right: @size / 4;
+    }
+
+    @media @Tablet, @Phone-L, @Phone-S {
+      width: 100%;
+      padding-top: @size-xxxs;
+      padding-bottom: @size-xxxs;
+    }
+  }
+
+  &__link {
+    color: @font-default-color;
+
+    &:hover {
+      text-decoration: none;
+      color: @brand-primary;
+    }
+    .c-help-nav__item--selected & {
+      color: @brand-primary;
+    }
+}
+
+}

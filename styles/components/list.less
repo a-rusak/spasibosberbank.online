@@ -1,0 +1,28 @@
+.c-list {
+  &&--bullet {
+    list-style: none;
+    margin: @size-em-xxxs 0;
+    padding: 0;
+    padding-left: @size-xl;
+
+    li {
+      margin: 0 0 @size-em-xl 0;
+      padding: 0;
+      line-height: 1.2;
+
+      &::before {
+        content: "";
+        .square(@size-xxxs);
+        border-radius: 50%;
+        background-color: @brand-primary;
+        float: left;
+        margin-left: -@size-xl;
+        margin-top: @size-em * .4;
+      }
+
+      strong {
+        font-weight: @font-weight-semibold;
+      }
+    }
+  }
+}

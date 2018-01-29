@@ -1,0 +1,153 @@
+.l-grid {
+  padding: @size-xl / 2;
+  margin-left: -@size-xl;
+  margin-right: -@size-xl;
+
+  &__flex {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    &--col {
+      flex-flow: column wrap;
+    }
+    &--row {
+      flex-flow: row wrap;
+    }
+  }
+  &__element {
+    padding: @size-xl / 2;
+
+    .l-grid--double-space & {
+      @media @Laptop, @Laptop-L, @4K {
+        padding: @size-xl;
+      }
+    }
+    .l-grid--double-space .l-grid:not(.l-grid--double-space) & {
+      padding: @size-xl / 2; // drop to default padding for child grids
+    }
+
+    .l-grid__str-item > & {
+      width: percentage(1);
+    }
+  }
+
+  &__str {
+    &-item {
+      display: flex;
+      flex-grow: 1;
+      max-width: 100%;
+
+      .str-mix(2);
+      .str-mix(3);
+      .str-mix(4);
+      .str-mix(5);
+
+      // .border-mix(3);
+
+      .l-main__section &--4 {
+        @media @Tablet {
+          flex-basis: percentage(1/2);
+        }
+        @media @Phone-L, @Phone-S {
+          flex-basis: percentage(1);
+        }
+      }
+      .l-main__section &--3 {
+        @media @Tablet, @Phone-L, @Phone-S {
+          flex-basis: percentage(1);
+        }
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  // Modificator
+
+  &--double-space {
+    @media @Laptop, @Laptop-L, @4K {
+      padding: 0;
+    }
+  }
+
+}
+
+.str-mix(@items-in-row: 3) {
+  @selector: ~"--@{items-in-row}";
+  //border-left: 1px solid #000;
+
+  &@{selector} {
+    @media @4K, @Laptop-L, @Laptop {
+      flex-basis: percentage(1/@items-in-row);
+    }
+    @media @Tablet, @Phone-L {
+      @divider: `@{items-in-row} > 1 ? @{items-in-row} : 2`;
+      flex-basis: percentage(1/(@divider - 1));
+    }
+    @media @Phone-S {
+      @divider: `@{items-in-row} > 2 ? @{items-in-row} : 3`;
+      flex-basis: percentage(1/(@divider - 2));
+    }
+  }
+}
+
+.border-mix(@items-in-row: 3) {
+  @selector: ~"--border@{items-in-row}";
+
+  &@{selector} {
+    position: relative;
+
+    & + & {
+      &::after {
+        content: "";
+        position: absolute;
+        .size(1px, 100%);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: fade(@brand-primary, 20%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        .size(100%, 1px);
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+      }
+    }
+    .mix(@a, @b) {
+      &:nth-child(@{a}) {
+        &::after {
+          background-color: transparent;
+        }
+      }
+      &:nth-child(@{b}) {
+        &::before {
+          background-color: fade(@brand-primary, 20%);
+        }
+      }
+    }
+    @media @4K, @Laptop-L, @Laptop {
+      @z: @items-in-row + 1;
+      @a: ~"@{items-in-row}n+1";
+      @b: ~"n+@{z}";
+      //.mix(~"3n+1", ~"n+4");
+      .mix(@a, @b);
+    }
+    @media @Tablet, @Phone-L {
+      @z: @items-in-row - 1;
+      @a: ~"@{z}n+1";
+      @b: ~"n+@{items-in-row}";
+      //.mix(~"2n+1", ~"n+3");
+      .mix(@a, @b);
+    }
+    @media @Phone-S {
+      .mix(~"n+1", ~"n+2");
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.c-button {
+
+  &&--default {
+    display: inline-flex;
+    border-radius: 4px;
+    padding: @size-em-s @size * 3;
+    font-size: @size-em-s;
+
+    @media @Phone-S {
+      display: block;
+      text-align: center;
+    }
+
+    .c-mobile-search__results & {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &&--scroll {
+    .l-main__str-bottom & {
+      .square(44px);
+      display: flex;
+      margin: auto;
+
+      @media @Phone-L, @Phone-S {
+        display: none;
+      }
+    }
+  }
+
+  &&--white {
+    background-color: @white;
+    color: @brand-primary;
+  }
+  &&--primary {
+    background-color: @brand-primary;
+    color: @white;
+  }
+  &&--border {
+    border: 1px solid @black-20;
+    color: @font-default-color;
+  }
+}

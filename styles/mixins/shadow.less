@@ -1,0 +1,17 @@
+.shadow(@level: 1){
+  & when (@level = 1) {
+    box-shadow: 0 2px 5px @black-10;
+  }
+  & when (@level = 2) {
+    box-shadow: 0 4px 10px @black-10;
+  }
+  & when (@level = 3) {
+    box-shadow: 0 8px 20px @black-10;
+  }
+  & when (@level = 4) {
+    box-shadow: 0 16px 30px @black-20;
+  }
+  & when (@level = 5) {
+    box-shadow: 0 20px 40px @black-30;
+  }
+}
