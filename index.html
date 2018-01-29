@@ -7,9 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Спасибо от Сбербанка</title>
   <link rel="preload" href="../fonts/FedraSansPro-BookLF.woff2" as="font" type="font/woff2" crossorigin>
-  <link href="css/spasibosberbank_events/all.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/adaptation.css" rel="stylesheet">
+
+<!-- styles from https://spasibosberbank.online/  -->
+  <link rel="stylesheet" href="css/spasibosberbank_online/normalize.css">
+  <link rel="stylesheet" href="css/spasibosberbank_online/bootstrap.min.css">
+  <link rel="stylesheet" href="css/spasibosberbank_online/main.css">
+  <link rel="stylesheet" href="css/spasibosberbank_online/update.css">
+<!-- END styles from https://spasibosberbank.online/  -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/adaptation.css">
 </head>
 
 <body class="is-debug">
@@ -179,7 +186,19 @@
               <ul class="c-main-nav__root-list">
                 <li class="c-main-nav__root-item">
                   <a class="c-main-nav__root-link" href="/1">Спецпредложения</a>
-                  <ul class="c-main-nav__menu">
+                  <ul class="c-main-nav__menu c-main-nav__menu--column-3">
+                    <li class="c-main-nav__menu-item">
+                      <a class="c-main-nav__menu-link" href="/216">Классика</a>
+                    </li>
+                    <li class="c-main-nav__menu-item">
+                      <a class="c-main-nav__menu-link" href="/41">Рок</a>
+                    </li>
+                    <li class="c-main-nav__menu-item">
+                      <a class="c-main-nav__menu-link" href="/3">Поп / Эстрада</a>
+                    </li>
+                    <li class="c-main-nav__menu-item">
+                      <a class="c-main-nav__menu-link" href="/1200">Авторская / Шансон / Романс</a>
+                    </li>
                     <li class="c-main-nav__menu-item">
                       <a class="c-main-nav__menu-link" href="/216">Классика</a>
                     </li>
@@ -202,7 +221,7 @@
                 </li>
                 <li class="c-main-nav__root-item c-main-nav__root-item--selected">
                   <a class="c-main-nav__root-link" href="/2">Концерты</a>
-                  <ul class="c-main-nav__menu">
+                  <ul class="c-main-nav__menu c-main-nav__menu--column-2">
                     <li class="c-main-nav__menu-item">
                       <a class="c-main-nav__menu-link" href="/216">Классика</a>
                     </li>

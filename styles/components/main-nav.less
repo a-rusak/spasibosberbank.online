@@ -65,19 +65,30 @@
   }
 
   &__menu {
-    // min-width: @size-em * 20;
-    // width: 100%;
+    min-width: @size-em * 16;
     top: 100%;
-    // column-width: 15em;
-    column-count: 2;
-    column-gap: @size * 2;
-    column-rule: 1px solid @black-05;
     font-size: @size-s;
     .nav-menu-mixin(main-nav);
 
-    .c-main-nav__root-item:nth-child(1n+6)
-      & {
+    // .c-main-nav__root-item:nth-child(1n+6)
+    .c-main-nav__root-item:last-child & {
       right: 0;
+    }
+
+    @media @4K, @Laptop-L, @Laptop {
+      &--column-2 {
+        column-count: 2;
+        column-gap: @size * 2;
+        column-rule: 1px solid @black-05;
+        min-width: @size-em * 16 * 2;
+      }
+
+      &--column-3 {
+        column-count: 3;
+        column-gap: @size * 2;
+        column-rule: 1px solid @black-05;
+        min-width: @size-em * 16 * 3;
+      }
     }
 
     @media @Tablet, @Phone-L, @Phone-S {

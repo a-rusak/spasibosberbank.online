@@ -30,6 +30,14 @@
     padding: 3px @size-xxs 0 0;
     min-height: @size-xl * 2;
 
+    &:hover,
+    &:focus {
+
+      @media @4K, @Laptop-L, @Laptop {
+        color: @white;
+      }
+    }
+
     img {
       position: relative;
       right: -3px; // pixel perfect
