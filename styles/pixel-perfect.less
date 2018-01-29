@@ -51,7 +51,12 @@
     margin-right: 4px;
   }
   .l-main__str-main {
-    padding-bottom: 6px;
+    @media @4K, @Laptop-L, @Laptop {
+      margin-bottom: -46px;
+    }
+  }
+  .l-main__str-bottom {
+    margin-top: -19px;
   }
 }
 [id="sectionAdvantages"] {
