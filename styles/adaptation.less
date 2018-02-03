@@ -13,13 +13,6 @@ body {
 .l-header,
 .l-footer,
 .l-main__section {
-  // width: 100vw;
-  // position: relative;
-  // left: 50%;
-  // right: 50%;
-  // margin-left: -50vw;
-  // margin-right: -50vw;
-
   font-family: @font-family-sans;
   font-weight: @font-weight-light;
   font-size: 16px;
@@ -39,6 +32,18 @@ body {
     padding: @size-xxs;
   }
 }
+.l-main__section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  .container_top20 &:first-child {
+    margin-top: -20px;
+  }
+}
 
 .l-footer {
   width: auto;
@@ -51,6 +56,51 @@ body {
 .l-header {
   width: auto;
   min-width: 0 !important;
+
+  &__str-A-right {
+    @media @Tablet, @Phone-L, @Phone-S {
+      && {
+        background-color: @brand-primary !important;
+        padding: @size / 4 @size-xxs;
+      }
+    }
+  }
+  &__str-B {
+    && {
+      @media @Tablet, @Phone-L, @Phone-S {
+        display: none;
+      }
+    }
+  }
+  &__str-D {
+    && {
+      @media @Tablet, @Phone-L, @Phone-S {
+        display: none;
+      }
+    }
+  }
+  &__str-C {
+    && {
+      @media @4K, @Laptop-L {
+        padding-right: @size-em * 5.3;
+      }
+    }
+  }
+  &__str-E.l-grid__element {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &&--adaptation {
+    @media @4K, @Laptop-L, @Laptop {
+      &::after {
+        content: none;
+      }
+      .l-header__grid {
+        display: none;
+      }
+    }
+  }
 }
 
 .l-header::after {
